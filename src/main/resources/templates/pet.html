@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<!--/*@thymesVar id="pet" type="org.springframework.demo.funwithfunctional.pet.Pet"*/-->
+
+  <head>
+    <title th:text="${pet.name}">John</title>
+  </head>
+
+  <body>
+      <h1 th:text="${pet.name}">John</h1>
+      <p th:text="${pet.birthDay}">1</p>
+      <hr/>
+      <p th:text="${date}">1</p>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+    <title>Pets</title>
+  </head>
+
+  <body>
+      <h1>List of Pets</h1>
+      <table>
+        <thead>
+          <tr>
+              <th>Name</th>
+              <th>Birthday</th>
+          </tr>
+        </thead>
+        <tbody>
+        <!--/*@thymesVar id="pet" type="org.springframework.demo.funwithfunctional.pet.Pet"*/-->
+          <tr th:each="pet : ${pets}">
+              <td>
+                <a th:href="@{'/pets/'+ ${pet.id}}" th:text="${pet.name}">Name</a>
+              </td>
+            <td th:text="${pet.birthDay}">Birthday</td>
+        </tbody>
+      </table>
+      <hr/>
+      <p th:text="${date}">1</p>
+  </body>
+</html>
