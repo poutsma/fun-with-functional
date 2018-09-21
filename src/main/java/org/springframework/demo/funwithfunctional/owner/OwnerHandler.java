@@ -21,7 +21,6 @@ import static org.springframework.web.reactive.function.server.RouterFunctions.r
 /**
  * @author Arjen Poutsma
  */
-@Component
 public class OwnerHandler {
 
 	private final OwnerRepository ownerRepository;
@@ -41,12 +40,6 @@ public class OwnerHandler {
 	public Mono<ServerResponse> showOwners(ServerRequest request) {
 		Flux<Owner> owners = this.ownerRepository.findAll();
 		return ServerResponse.ok().contentType(APPLICATION_JSON).body(owners, Owner.class);
-	}
-
-	public RouterFunction<?> ownerRouter() {
-		return nest(path("/owners").and(accept(APPLICATION_JSON)),
-				route(GET("/{id}"), this::showOwner)
-						.andRoute(method(HttpMethod.GET), this::showOwners));
 	}
 
 }

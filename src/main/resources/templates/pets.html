@@ -16,7 +16,6 @@
           </tr>
         </thead>
         <tbody>
-        <!--/*@thymesVar id="pet" type="org.springframework.demo.funwithfunctional.pet.Pet"*/-->
           <tr th:each="pet : ${pets}">
               <td>
                 <a th:href="@{'/pets/'+ ${pet.id}}" th:text="${pet.name}">Name</a>
